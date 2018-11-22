@@ -6,9 +6,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+
             <li class="nav-item">
                 <a class="nav-link" href="">Home</a>
             </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     จัดการหมายเลขบัญชี
@@ -16,7 +18,18 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="?menu=acc-number-addForm">เพิ่มเลขบัญชี</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">แสดงรายการเลขบัญชี</a>
+                    <a class="dropdown-item" href="?menu=acc-number-show">แสดงรายการเลขบัญชี</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    บันทึกบัญชี
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#อย่าลืมมาใส่ลิงค์">บันทึกบัญชี</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#อย่าลืมมาใส่ลิงค์">แสดงรายการเลขบัญชี</a>
                 </div>
             </li>
 

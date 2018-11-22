@@ -12,6 +12,7 @@
                             <th>#</th>
                             <th>เลขที่บัญชี</th>
                             <th>รายการ</th>
+                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +27,15 @@
                             <td> <?=$index?> </td>
                             <td> <?=$row['acc_number']?> </td>
                             <td> <?=$row['acc_title']?> </td>
+                            <td>
+                                <a href="?menu=acc-number-editForm&id=<?=$row['id']?>" class="btn btn-outline-primary">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                
+                                <a href="?menu=acc-number-delDB&id=<?=$row['id']?>" class="btn btn-outline-danger" onclick="return confirm('ยืนยันการลบ')">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
                         </tr>
                         <?php
                             $index++;

@@ -15,6 +15,7 @@
                             <th>ACTION</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
                         <?php
                         $sql = "SELECT * FROM tb_account_number ORDER BY acc_number ASC";

@@ -27,9 +27,9 @@
                     บันทึกบัญชี
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#อย่าลืมมาใส่ลิงค์">บันทึกบัญชี</a>
+                    <a class="dropdown-item" href="?menu=acc-book-addForm">บันทึกบัญชี</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#อย่าลืมมาใส่ลิงค์">แสดงรายการเลขบัญชี</a>
+                    <a class="dropdown-item" href="?menu=acc-book-show">แสดงรายการเลขบัญชี</a>
                 </div>
             </li>
 

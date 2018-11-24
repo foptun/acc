@@ -33,6 +33,15 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="?menu=acc-ledger-show">บัญชีแยกประเภท</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="?menu=acc-test-show">งบทดลอง</a>
+            </li>
+
+
         </ul>
         
 

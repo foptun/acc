@@ -1,3 +1,4 @@
+<div class="container">
 <?php
 $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
 ?>
@@ -10,7 +11,6 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
             <div class="card-body">
                 <?php
                 $check_year_duplicate = 0;
-
                 $sql = "SELECT * FROM tb_account_book GROUP BY YEAR(date) ORDER BY YEAR(date) ASC";
                 $queryYear = mysqli_query($conn, $sql);
                 while($rowYear = mysqli_fetch_array($queryYear)){
@@ -43,26 +43,20 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
                         
                         $check_month_duplicate = 0;
                         $check_day_duplicate = 0;
-
                         $total_debit = 0.00;
                         $total_credit = 0.00;
     
-                        $sql = "SELECT * FROM tb_account_book WHERE YEAR(date) = '$yearOriginal' ORDER BY date ASC";
+                        $sql = "SELECT * FROM tb_account_book WHERE YEAR(date) = '$yearOriginal' ORDER BY date ASC, id ASC";
                         $queryBook = mysqli_query($conn, $sql);
-
                         $arr_book[] = array();
                         while($row = mysqli_fetch_array($queryBook)){
                             $arr_book[] = $row;
                         }
-
                         $queryBook = mysqli_query($conn, $sql);
-
                         $index = 1;
                         while($rowBook = mysqli_fetch_array($queryBook)){ 
                             
-
                             $month = date("m", strtotime($rowBook['date']));
-
                             $id_acc = $rowBook['id_acc'];
                             $sql = "SELECT * FROM tb_account_number 
                                         WHERE id = '$id_acc' ";
@@ -85,7 +79,7 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
                                 $day = date("d", strtotime($rowBook['date']));
                                 
                                 if($check_day_duplicate != $day){
-                                    echo $day;
+                                    echo (int)$day;
                                 }
                                 $check_day_duplicate = $day;
                                 ?>
@@ -106,7 +100,6 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
                                 <?php
                                 if($rowBook['status'] == 'debit'){
                                     echo number_format($rowBook['cost']);
-
                                     $total_debit = $total_debit + $rowBook['cost'];
                                 }
                                 ?>
@@ -133,7 +126,6 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
                             <?php
                                 if($rowBook['status'] == 'credit'){
                                     echo number_format($rowBook['cost']);
-
                                     $total_credit = $total_credit + $rowBook['cost'];
                                 }
                             ?>
@@ -216,4 +208,5 @@ $arr_month = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","�
             </div>
         </div>
     </div>
+</div>
 </div>
